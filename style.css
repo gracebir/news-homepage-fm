@@ -15,17 +15,15 @@
 
 body{
     font-family: 'Inter', sans-serif;
-    height: 100vh;
     background-color: var(--color-off-white);
-    display: flex;
-    align-items: center;
     font-size: .9rem;
+    width: 100%;
+    display: flex;
+    justify-content: center;
 }
 
 main{
-    height: 80vh;
-    width: 65vw;
-    margin: 0 auto;
+    padding: .4rem 1rem;
 }
 
 li{
@@ -46,12 +44,17 @@ header{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 2.5rem;
 }
 
-nav ul{
-    display: flex;
-    gap: 1.5rem;
+
+nav{
+    display: none;
+}
+
+.menu-logo{
+    display: block;
+    color: var(--color-very-dark-blue);
+    cursor: pointer;
 }
 
 .dark-color{
@@ -63,14 +66,23 @@ nav ul{
     color: var(--color-soft-red);
 }
 
+.hero-desk-img{
+    display: none;
+}
+
+.hero-mobile-img{
+    display: block;
+    width: 100%;
+}
+
 .braind-hero{
     font-weight: 800;
-    font-size: 3.6rem;
+    font-size: 2.5rem;
     line-height: 1;
 }
 
 .braind-container{
-    margin: .5rem 0;
+    margin: .6rem 0;
 }
 
 .text-hero{
@@ -113,6 +125,8 @@ nav ul{
     'three'
     'four'
     'five'
+    'six'
+    'seven'
     ;
 }
 
@@ -140,9 +154,16 @@ nav ul{
     grid-area: five;
 }
 
+.container:nth-child(6){
+    grid-area: six;
+}
+
+.container:nth-child(7){
+    grid-area: seven;
+}
+
 .image-hero{
     width: 100%;
-    height: 35vh;
 }
 
 .info-section{
@@ -150,62 +171,135 @@ nav ul{
     color: var(--color-off-white);
 }
 
-.image-hero > img{
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
 
-.container-review{
-    display: grid;
-    gap: 1.5rem;
-    grid-template-columns: repeat(3, 1fr);
-}
-
-.img-container{
-    width: 5rem;
-    height: 180px;
-}
-
-.img-container > img{
-    width: 100%;
-    height: 100%;
-}
 
 .spot-item{
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 1rem;
+   display: grid;
+   grid-template-columns: 40% 60%;
+    gap: .7rem;
+    width: 100%;
+    height: 30vh;
 }
 
 .spot-item-container{
     display: flex;
     flex-direction: column;
-    width: 340px;
     gap: 1rem;
 }
 
+.spot-image-container{
+    height: 100%;
+    width: 100%;
+}
+
+.spot-image-container > img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
 .spot-item-container span{
-    font-size: 3.5rem;
+    font-size: 3rem;
     color: var(--color-grayish-blue);
     font-weight: 700;
 }
 
 .spot-item-container h3{
-    font-size: 1.3rem;
-    font-weight: 700;
+    font-size: 1rem;
+    font-weight: 600;
 }
 
 .spot-item-container p{
     font-size: 1rem;
 }
 
+/* media query */
+
 @media (min-width: 40rem) {
+    body{
+        display: flex;
+        align-items: center;
+        overflow-x: hidden;
+    }
+
+    main{
+        height: 80vh;
+        width: 65vw;
+        margin: 0 auto;
+    }
+
+    nav ul{
+        display: flex;
+        gap: 1.5rem;
+    }
+
+    .menu-logo{
+        display: none;
+    }
+
+    .image-hero{
+        width: 100%;
+        border: 2px solid black;
+    }
+
+    .hero-desk-img{
+        display: block;
+        width: 100%;
+
+    }
+    
+    .hero-mobile-img{
+        display: none;
+    }
+
+    .text-hero{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 2rem;
+    }
+
+    .braind-hero{
+        font-weight: 800;
+        font-size: 3.5rem;
+        line-height: 1;
+    }
+
     .container-grid{
         grid-template-areas: 
         'one one four'
         'two three four'
-        'five five five'
+        'five six seven'
         ;
+    }
+
+    .spot-item{
+        display: grid;
+        border: 2px solid black;
+        grid-template-columns: 38% 58%;
+         gap: 1rem;
+         width: 100%;
+         height: 25vh;
+     }
+
+    .spot-item-container{
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+    
+    .spot-item-container span{
+        font-size: 3.5rem;
+        color: var(--color-grayish-blue);
+        font-weight: 700;
+    }
+    
+    .spot-item-container h3{
+        font-size: 1.5rem;
+        font-weight: 700;
+    }
+    
+    .spot-item-container p{
+        font-size: 1rem;
     }
 }
