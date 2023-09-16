@@ -5,19 +5,21 @@ import MenuModal from './MenuModal'
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false)
   return (
-    <header className="max-w-7xl mx-auto flex items-center justify-between py-6 lg:py-10">
-      <img src={navItems.logo} alt="logo" />
-      <nav className='hidden lg:flex space-x-10'>
-        {navItems.navLinks.map((item)=> (
-          <a className='text-lg text-dark-grayish hover:text-red font-medium' key={item} href="#">
-            {item}
-          </a>
-        ))}
-      </nav>
-      <button onClick={()=> setIsOpen(!isOpen)} className='block lg:hidden z-50'>
-        <img src={isOpen ? navItems.close : navItems.hamburger } alt="menu" />
-      </button>
-      {isOpen && <MenuModal/>}
+    <header className="py-6 lg:py-10 w-full sticky top-0 bg-off-white z-20">
+      <div className="max-w-7xl mx-auto flex items-center justify-between px-6 lg:px-0">
+        <img src={navItems.logo} alt="logo" />
+        <nav className='hidden lg:flex space-x-10'>
+          {navItems.navLinks.map((item) => (
+            <a className='text-lg text-dark-grayish hover:text-red font-medium' key={item} href="#">
+              {item}
+            </a>
+          ))}
+        </nav>
+        <button onClick={() => setIsOpen(!isOpen)} className='block lg:hidden z-50'>
+          <img src={isOpen ? navItems.close : navItems.hamburger} alt="menu" />
+        </button>
+      </div>
+      {isOpen && <MenuModal />}
     </header>
   )
 }
