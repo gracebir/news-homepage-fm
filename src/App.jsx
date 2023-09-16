@@ -6,7 +6,7 @@ function App() {
   return (
     <div className="min-h-screen font-inter w-full py-4 lg:py-10 px-6 lg:px-0">
       <Header/>
-      <div className="max-w-7xl mx-auto">
+      <div className="max-w-7xl mx-auto flex flex-col gap-10 lg:gap-14">
         <Hero/>
         <Spots/>
       </div>
