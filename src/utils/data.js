@@ -1,4 +1,4 @@
-import {retro, laptop, gaming, logo} from '../assets'
+import {retro, laptop, gaming, logo, close, hamburger} from '../assets'
 
 export const news = [
     {
@@ -50,5 +50,7 @@ export const hero = {
 
 export const navItems = {
     logo: logo,
-    navLinks: ["Home","New","Popular","Trending","Categories"]
+    navLinks: ["Home","New","Popular","Trending","Categories"],
+    close: close,
+    hamburger
 }
